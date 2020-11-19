@@ -1,0 +1,50 @@
+:root {
+    --op-menu-link-color: #eee;
+    --op-menu-text-color: #aaa;
+    --op-menu-on-hover-color: #eb3330;
+    --op-menu-transition-speed: 500ms;
+    --submenu-border-color: #eb3330;
+    --submenu-background-color: #191919;
+    --search-button-color: #eb3330;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+html {
+    font-size: 10px;
+    background: white;
+    color: var(--op-menu-text-color);
+}
+
+body {
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+header {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #191919;
+}
+
+container {
+    width: 100%;
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0;
+
+}
