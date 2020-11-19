@@ -1,8 +1,10 @@
 :root {
-    --op-menu-link-color: #eee;
-    --op-menu-text-color: #aaa;
-    --op-menu-on-hover-color: #eb3330;
-    --op-menu-transition-speed: 500ms;
+    --main-menu-line-height: 8rem;
+    --sub-menu-line-height: 4rem;
+    --menu-link-color: #eee;
+    --menu-text-color: #aaa;
+    --menu-on-hover-color: #eb3330;
+    --menu-transition-speed: 500ms;
     --submenu-border-color: #eb3330;
     --header-background-color: #191919;
     --menu-background-color: #191919;
@@ -19,7 +21,7 @@
 html {
     font-size: 10px;
     background: white;
-    color: var(--op-menu-text-color);
+    color: var(--menu-text-color);
 }
 
 body {
@@ -50,7 +52,10 @@ header {
 
 }
 
-.header__logo {}
+.header__logo {
+    width: 24rem;
+    padding: 1rem;
+}
 
 .menu__burger-buttons {
     font-size: 4rem;
@@ -58,26 +63,42 @@ header {
     position: absolute;
     right: 1rem;
     top: 1rem;
-    /* transform: translate(-50%);
-    -webkit-transform: translate(-50%);
-    -moz-transform: translate(-50%);
-    -ms-transform: translate(-50%);
-    -o-transform: translate(-50%); */
+    cursor: pointer;
+    z-index: 1000;
+
 }
 
 /* Navigation menu */
 
-.nav {}
+nav {
+    width: 100%;
 
-.main-menu {}
 
-.main-menu--sm {}
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.main-menu {
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+}
+
+.main-menu a {
+    /* all the anchors in the menu are styled here */
+    display: block;
+    color: var(--menu-link-color);
+    padding: 0 1.5rem;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+}
 
 .main-menu__link {}
 
-.sub-menu {}
+.sub-menu {
+    display: block;
+    background-color: var(--menu-background-color);
+    border-left: 3px solid var(--submenu-border-color);
 
-.sub-menu--sm {}
+}
 
 .sub-menu__link {}
 
@@ -87,10 +108,54 @@ header {
 @media only screen and (min-width: 850px) {
 
     .menu__burger-buttons {
+        /*Hiding the burger buttons*/
         display: none;
     }
 
-    .main-menu--lg {}
+    nav {
+        line-height: var(--sub-menu-line-height);
+    }
 
-    .sub-menu--lg {}
+    /* MAIN MENU STYLES*/
+
+    .main-menu--lg-horizontal {
+        display: flex;
+        line-height: var(--main-menu-line-height);
+    }
+
+
+    /*MAIN MENU EFFECTS*/
+
+    .main-menu--lg-horizontal a:hover {
+        color: var(--menu-on-hover-color);
+        transition: color var(--menu-transition-speed);
+        -webkit-transition: color var(--menu-transition-speed);
+        -moz-transition: color var(--menu-transition-speed);
+        -ms-transition: color var(--menu-transition-speed);
+        -o-transition: color var(--menu-transition-speed);
+    }
+
+    /* SUB MENU STYLES */
+    .sub-menu {
+        width: 20rem;
+        position: absolute;
+        border: 3px solid transparent;
+    }
+
+    .sub-menu li {
+        line-height: var(--sub-menu-line-height);
+    }
+
+    .sub-menu--lg-slide-up {
+        border-top: 3px solid var(--submenu-border-color);
+    }
+
+    .sub-menu--lg-slide-left {
+        border-left: 3px solid var(--submenu-border-color);
+    }
+
+    /* SUB MENU EFFECTS*/
+
+
+
 }
