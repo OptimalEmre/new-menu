@@ -1,23 +1,25 @@
-$('#op-menu-open').click(function(event) {
-  $("#op-menu-open").hide();
-  $("#op-menu-close").show();
+$('#menu--open').click(function(event) {
+  $("#menu--open").hide();
+  $("#menu--close").show();
 
-  $('.op-menu-navbar').slideDown();
+  $('.main-menu').slideDown();
   return false;
 });
 
-$('#op-menu-close').click(function(event) {
-  $('#op-menu-close').hide();
-  $("#op-menu-open").show();
+$('#menu--close').click(function(event) {
+  $('#menu--close').hide();
+  $("#menu--open").show();
 
-  $('.op-menu-navbar').slideUp();
+  $('.main-menu').slideUp();
   return false;
 });
 
-$('.op-menu-trigger').click(function(event) {
+$('.menu__trigger').click(function(event) {
+
   event.preventDefault();
   event.stopPropagation();
-  $(this).parent().children('.op-submenu').slideToggle();
-  
+  $(this).parent().children('.sub-menu').slideToggle();
+
   return false;
+  
 });

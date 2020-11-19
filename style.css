@@ -6,7 +6,7 @@
     --menu-on-hover-color: #eb3330;
     --menu-transition-speed: 500ms;
     --submenu-border-color: #eb3330;
-    --header-background-color: #191919;
+    --header-background-color: #070707;
     --menu-background-color: #191919;
     --search-button-color: #eb3330;
 }
@@ -22,6 +22,7 @@ html {
     font-size: 10px;
     background: white;
     color: var(--menu-text-color);
+    font-family: 'Roboto', sans-serif;
 }
 
 body {
@@ -48,12 +49,12 @@ header {
     width: 100%;
     max-width: 1170px;
     margin: 0 auto;
-    padding: 0 1.5rem;
+    padding: 0;
 
 }
 
 .header__logo {
-    width: 24rem;
+    width: 16rem;
     padding: 1rem;
 }
 
@@ -68,44 +69,72 @@ header {
 
 }
 
+#menu--close {
+    display: none;
+}
+
+
 /* Navigation menu */
 
 nav {
     width: 100%;
-
-
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+
 }
 
 .main-menu {
-    position: relative;
-    font-family: 'Roboto', sans-serif;
+    display: fixed;
+    background-color: var(--menu-background-color);
+
+
 }
+
+.main-menu li {
+    line-height: 4rem;
+}
+
+
 
 .main-menu a {
     /* all the anchors in the menu are styled here */
-    display: block;
+
+
     color: var(--menu-link-color);
     padding: 0 1.5rem;
     font-size: 1.4rem;
     text-transform: uppercase;
-}
+    align-items: center;
 
-.main-menu__link {}
+}
 
 .sub-menu {
-    display: block;
+
     background-color: var(--menu-background-color);
     border-left: 3px solid var(--submenu-border-color);
-
+    margin-left: 3px;
 }
 
-.sub-menu__link {}
+@media screen and (max-width: 850px) {
 
+    .main-menu--lg {
+        width: 100vw;
+        overflow-y: scroll;
+        display: none;
+    }
 
+    .sub-menu {
+        display: none;
+    }
+}
 
-/* Desktop view */
-@media only screen and (min-width: 850px) {
+/* DESKTOP VIEW */
+@media screen and (min-width: 851px) {
+    .header__logo {
+        width: 24rem;
+        margin-right: 4rem;
+        padding: 1.5rem 0 1rem 0;
+    }
 
     .menu__burger-buttons {
         /*Hiding the burger buttons*/
@@ -113,20 +142,30 @@ nav {
     }
 
     nav {
-        line-height: var(--sub-menu-line-height);
+        display: flex;
+        background-color: var(--header-background-color);
     }
+
+
 
     /* MAIN MENU STYLES*/
 
     .main-menu--lg {
         display: flex;
+        position: relative;
         line-height: var(--main-menu-line-height);
+        overflow-y: initial;
+
+    }
+
+    .main-menu--lg li {
+        line-height: var(--main-menu-line-height);
+        background-color: var(--header-background-color);
     }
 
     .main-menu--lg a {
-        transition: color var(--menu-transition-speed);
+        background-color: var(--header-background-color);
     }
-
 
     /*MAIN MENU EFFECTS*/
 
@@ -140,23 +179,27 @@ nav {
     }
 
     /* SUB MENU STYLES */
-    .sub-menu {
+    .sub-menu--lg {
         width: 20rem;
         position: absolute;
         border: 3px solid transparent;
         z-index: 100;
         top: 16rem;
+        max-height: initial;
 
         transition: all var(--menu-transition-speed);
         -webkit-transition: all var(--menu-transition-speed);
         -moz-transition: all var(--menu-transition-speed);
         -ms-transition: all var(--menu-transition-speed);
         -o-transition: all var(--menu-transition-speed);
+
+        opacity: 0;
+        visibility: hidden;
     }
 
     .sub-menu li {
         line-height: var(--sub-menu-line-height);
-
+        position: relative;
     }
 
     .sub-menu--lg-slide-up {
@@ -176,10 +219,9 @@ nav {
 
     .sub-menu--lg-slide-left {
         border-left: 3px solid var(--submenu-border-color);
-        top: 0;
         /*second level submenu initial position*/
+        top: 0;
         left: 140%;
-
     }
 
     .sub-menu--lg-slide-left::before {
@@ -195,7 +237,16 @@ nav {
 
     /* SUB MENU EFFECTS*/
 
+    /*up direction of the first level menus*/
     .main-menu--lg li:hover>.sub-menu--lg-slide-up {
         top: var(--main-menu-line-height);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .sub-menu--lg li:hover>.sub-menu--lg-slide-left {
+        left: 100%;
+        opacity: 1;
+        visibility: visible;
     }
 }

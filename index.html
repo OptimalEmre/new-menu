@@ -19,22 +19,32 @@
     <header>
 
         <div class="container">
-            <div class="header__logo">
-                <a href="#"><img src="./optimal_logo.svg" alt="Optimal Web App Solutions"></a>
-            </div>
-            <div class="menu__burger-buttons">
-                <ion-icon id="menu_open" name="menu-outline"></ion-icon>
-                <ion-icon id="menu_close" name="close-outline"></ion-icon>
-            </div>
             <nav>
+                <div class="header__logo">
+                    <a href="#"><img src="./optimal_logo.svg" alt="Optimal Web App Solutions"></a>
+                </div>
+                <div class="menu__burger-buttons">
+                    <span id="menu--open">
+                        <ion-icon name="menu-outline"></ion-icon>
+                    </span>
+                    <span id="menu--close">
+                        <ion-icon name="close-outline"></ion-icon>
+                    </span>
+
+
+                </div>
                 <ul class="main-menu main-menu--lg">
                     <li class="main-menu__link"><a href="">Home</a></li>
-                    <li class="main-menu__link menu__trigger"><a href="">Products</a>
-                        <ul class="sub-menu sub-menu--sm sub-menu--lg sub-menu--lg-slide-up">
+                    <li class="main-menu__link"><a class="menu__trigger" href="">Products<ion-icon
+                                name="caret-down-outline">
+                            </ion-icon></a>
+                        <ul class="sub-menu sub-menu--lg sub-menu--lg-slide-up">
                             <li class="sub-menu__link"><a href="">Clothes</a></li>
                             <li class="sub-menu__link"><a href="">Bath Suits</a>
-                            <li class="sub-menu__link menu__trigger"><a href="">Underwear</a>
-                                <ul class="sub-menu sub-menu--sm sub-menu--lg sub-menu--lg-slide-left">
+                            <li class="sub-menu__link"><a class="menu__trigger" href="">Underwear<ion-icon
+                                        name="caret-forward-outline">
+                                    </ion-icon></a>
+                                <ul class="sub-menu sub-menu--lg sub-menu--lg-slide-left">
                                     <li class="sub-menu__link"><a href="">Sexy</a></li>
                                     <li class="sub-menu__link"><a href="">Christian</a>
                                     <li class="sub-menu__link menu__trigger"><a href="">Sexy & Christian!</a>
@@ -46,7 +56,9 @@
                     </li>
                     <li class="main-menu__link"><a href="">Contact Us</a></li>
                     <li class="main-menu__link"><a href="">About Us</a></li>
-                    <li class="main-menu__link menu__trigger"><a href="">Polices</a>
+                    <li class="main-menu__link"><a class="menu__trigger" href="">Polices<ion-icon
+                                name="caret-down-outline">
+                            </ion-icon></a>
                         <ul class="sub-menu sub-menu--lg sub-menu--lg-slide-up">
                             <li class="sub-menu__link"><a href="">Terms of Service</a></li>
                             <li class="sub-menu__link"><a href="">Privacy Policy</a>
