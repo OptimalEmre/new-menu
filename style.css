@@ -118,15 +118,19 @@ nav {
 
     /* MAIN MENU STYLES*/
 
-    .main-menu--lg-horizontal {
+    .main-menu--lg {
         display: flex;
         line-height: var(--main-menu-line-height);
+    }
+
+    .main-menu--lg a {
+        transition: color var(--menu-transition-speed);
     }
 
 
     /*MAIN MENU EFFECTS*/
 
-    .main-menu--lg-horizontal a:hover {
+    .main-menu--lg a:hover {
         color: var(--menu-on-hover-color);
         transition: color var(--menu-transition-speed);
         -webkit-transition: color var(--menu-transition-speed);
@@ -140,22 +144,58 @@ nav {
         width: 20rem;
         position: absolute;
         border: 3px solid transparent;
+        z-index: 100;
+        top: 16rem;
+
+        transition: all var(--menu-transition-speed);
+        -webkit-transition: all var(--menu-transition-speed);
+        -moz-transition: all var(--menu-transition-speed);
+        -ms-transition: all var(--menu-transition-speed);
+        -o-transition: all var(--menu-transition-speed);
     }
 
     .sub-menu li {
         line-height: var(--sub-menu-line-height);
+
     }
 
     .sub-menu--lg-slide-up {
         border-top: 3px solid var(--submenu-border-color);
     }
 
+    .sub-menu--lg-slide-up::before {
+        /*little up arrow on the first level submenus*/
+        content: "";
+        position: absolute;
+        top: -2.5rem;
+        left: 3rem;
+        border: 1.2rem solid transparent;
+        border-bottom-color: var(--submenu-border-color);
+
+    }
+
     .sub-menu--lg-slide-left {
         border-left: 3px solid var(--submenu-border-color);
+        top: 0;
+        /*second level submenu initial position*/
+        left: 140%;
+
+    }
+
+    .sub-menu--lg-slide-left::before {
+        /*little left arrow on the second level submenus*/
+        content: "";
+        position: absolute;
+        top: 0.9rem;
+        left: -2.5rem;
+        border: 1.2rem solid transparent;
+        border-right-color: var(--submenu-border-color);
+
     }
 
     /* SUB MENU EFFECTS*/
 
-
-
+    .main-menu--lg li:hover>.sub-menu--lg-slide-up {
+        top: var(--main-menu-line-height);
+    }
 }
