@@ -120,6 +120,43 @@ nav {
 }
 
 
+/* SHOPPING CART */
+
+.shopping-cart {
+    position: absolute;
+    bottom: 1.3rem;
+    left: 1rem;
+
+
+
+}
+
+.fa-shopping-cart {
+    position: relative;
+    font-size: 2.8rem;
+    color: #ffac4d;
+}
+
+.shopping-cart__count {
+    position: absolute;
+    width: 2.4rem;
+    height: 2.4rem;
+    padding-top: 0.5rem;
+    font-size: 1.2rem;
+    text-align: center;
+    color: var(--menu-link-color);
+    background-color: #6722a0;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    -webkit-border-radius: 50%;
+
+    display: none;
+}
+
+
 
 /* SEARCHBOX */
 
@@ -149,7 +186,6 @@ nav {
     left: 0;
     width: 88%;
     height: 2.4rem;
-    margin-bottom: 10rem;
     line-height: 1rem;
     outline: 0;
     border: 0;
@@ -166,7 +202,7 @@ nav {
     top: -0.1rem;
     right: -0.1rem;
     border-radius: 50%;
-    color: var(--search-button-color);
+    color: #6722a0;
     text-align: center;
     font-size: 1.5rem;
     transition: all 1s;
@@ -188,6 +224,12 @@ nav {
 
     .sub-menu {
         display: none;
+    }
+
+
+    .shopping-cart__count {
+        bottom: 1.7rem;
+        left: 1.7rem;
     }
 
     .search__form {
@@ -331,6 +373,18 @@ nav {
         visibility: visible;
     }
 
+    /* SHOPPING CART LG */
+
+    .shopping-cart {
+
+        position: relative;
+        top: 2.9rem;
+    }
+
+    .shopping-cart__count {
+        top: -1.5rem;
+        left: 2rem;
+    }
 
 
     /* SEARCHBOX LG*/
@@ -358,7 +412,7 @@ nav {
     }
 
     .search__form:hover .fa-search {
-        background: var(--search-button-color);
+        background: #6722a0;
         color: white;
     }
 }

@@ -23,3 +23,16 @@ $('.menu__trigger').click(function(event) {
   return false;
   
 });
+
+
+$.cart_count = "14";
+
+if ($.cart_count == "")
+  $(".shopping-cart__count").hide();
+else {
+  $(".shopping-cart__count").show();
+  $(".shopping-cart__count").html($.cart_count);
+}
+
+
+
