@@ -132,6 +132,65 @@ nav {
     }
 }
 
+
+form {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 1s;
+    width: 4rem;
+    height: 4rem;
+    background: white;
+    box-sizing: border-box;
+    border-radius: 25px;
+    border: 4px solid white;
+    /* padding: 1rem; */
+}
+
+input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3rem;
+    line-height: 1rem;
+    outline: 0;
+    border: 0;
+    display: none;
+    font-size: 1.4rem;
+    border-radius: 20px;
+}
+
+.fa {
+    box-sizing: border-box;
+    padding-top: 0.7rem;
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    top: 0.1rem;
+    right: 0.1rem;
+    border-radius: 50%;
+    color: #07051a;
+    text-align: center;
+    font-size: 1.6rem;
+    transition: all 1s;
+}
+
+form:hover {
+    width: 200px;
+    cursor: pointer;
+}
+
+form:hover input {
+    display: block;
+}
+
+form:hover .fa {
+    background: #07051a;
+    color: white;
+}
+
 /* DESKTOP VIEW */
 @media screen and (min-width: 851px) {
     .header__logo {
