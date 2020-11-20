@@ -186,7 +186,7 @@ nav {
         z-index: 100;
         top: 16rem;
         max-height: initial;
-
+        background-color: var(--menu-background-color);
         transition: all var(--menu-transition-speed);
         -webkit-transition: all var(--menu-transition-speed);
         -moz-transition: all var(--menu-transition-speed);
