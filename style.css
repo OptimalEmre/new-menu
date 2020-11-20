@@ -8,7 +8,7 @@
     --submenu-border-color: #eb3330;
     --header-background-color: #070707;
     --menu-background-color: #191919;
-    --search-button-color: #eb3330;
+    --search-button-color: #a02422;
 }
 
 * {
@@ -119,9 +119,68 @@ nav {
     margin-left: 3px;
 }
 
+
+
+/* SEARCHBOX */
+
+.search__form {
+
+    position: relative;
+    transform: translate(0, 0);
+    transition: all 1s;
+    width: 3rem;
+    height: 3rem;
+    margin-left: auto;
+    padding-right: 1rem;
+    background: white;
+    box-sizing: border-box;
+    border-radius: 25px;
+    border: 4px solid white;
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+}
+
+.search__input {
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    left: 0;
+    width: 88%;
+    height: 2.4rem;
+    margin-bottom: 10rem;
+    line-height: 1rem;
+    outline: 0;
+    border: 0;
+    font-size: 1.4rem;
+    border-radius: 20px;
+}
+
+.fa-search {
+    box-sizing: border-box;
+    padding-top: 0.4rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    position: absolute;
+    top: -0.1rem;
+    right: -0.1rem;
+    border-radius: 50%;
+    color: var(--search-button-color);
+    text-align: center;
+    font-size: 1.5rem;
+    transition: all 1s;
+
+
+}
+
+
+
+/**************** MOBILE SPECIFIC VIEW ******************/
+
 @media screen and (max-width: 850px) {
 
-    .main-menu--lg {
+    .main-menu {
         width: 100vw;
         overflow-y: scroll;
         display: none;
@@ -130,68 +189,25 @@ nav {
     .sub-menu {
         display: none;
     }
+
+    .search__form {
+        width: 15rem;
+        margin: 1rem 1rem 1rem auto;
+
+    }
+
+    .search__input {
+        top: -0.2rem;
+        display: block;
+    }
+
+
 }
 
 
-form {
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: all 1s;
-    width: 4rem;
-    height: 4rem;
-    background: white;
-    box-sizing: border-box;
-    border-radius: 25px;
-    border: 4px solid white;
-    /* padding: 1rem; */
-}
 
-input {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 3rem;
-    line-height: 1rem;
-    outline: 0;
-    border: 0;
-    display: none;
-    font-size: 1.4rem;
-    border-radius: 20px;
-}
 
-.fa {
-    box-sizing: border-box;
-    padding-top: 0.7rem;
-    width: 3rem;
-    height: 3rem;
-    position: absolute;
-    top: 0.1rem;
-    right: 0.1rem;
-    border-radius: 50%;
-    color: #07051a;
-    text-align: center;
-    font-size: 1.6rem;
-    transition: all 1s;
-}
-
-form:hover {
-    width: 200px;
-    cursor: pointer;
-}
-
-form:hover input {
-    display: block;
-}
-
-form:hover .fa {
-    background: #07051a;
-    color: white;
-}
-
-/* DESKTOP VIEW */
+/***************** DESKTOP SPECIFIC VIEW ******************/
 @media screen and (min-width: 851px) {
     .header__logo {
         width: 24rem;
@@ -209,26 +225,28 @@ form:hover .fa {
         background-color: var(--header-background-color);
     }
 
-
-
     /* MAIN MENU STYLES*/
 
     .main-menu--lg {
         display: flex;
         position: relative;
         line-height: var(--main-menu-line-height);
-        overflow-y: initial;
-
+        background-color: var(--header-background-color);
     }
 
     .main-menu--lg li {
         line-height: var(--main-menu-line-height);
         background-color: var(--header-background-color);
+        vertical-align: middle;
     }
 
     .main-menu--lg a {
         background-color: var(--header-background-color);
     }
+
+
+
+
 
     /*MAIN MENU EFFECTS*/
 
@@ -311,5 +329,36 @@ form:hover .fa {
         left: 100%;
         opacity: 1;
         visibility: visible;
+    }
+
+
+
+    /* SEARCHBOX LG*/
+
+    .search__form {
+        align-self: center;
+        margin-bottom: 0.9rem;
+        margin-left: auto;
+    }
+
+    .search__input {
+        position: relative;
+        display: none;
+    }
+
+    /* SEARCHBOX EFFECT */
+
+    .search__form:hover {
+        width: 200px;
+        cursor: pointer;
+    }
+
+    .search__form:hover .search__input {
+        display: block;
+    }
+
+    .search__form:hover .fa-search {
+        background: var(--search-button-color);
+        color: white;
     }
 }
